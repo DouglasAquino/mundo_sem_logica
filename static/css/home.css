@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Nunito:wght@200&family=Titillium+Web:wght@200&display=swap');
+
+i{
+    margin: 0px;
+    padding: 8px;
+    width: 25px;
+    height: 25px;
+    color:black;
+}
+i:hover { 
+    color:#483D8B;
+}
+
+a{
+    padding: 3%;
+    color: white;
+    text-decoration:none; 
+}
+.sel{
+    padding: 5%;
+    color: yellow;
+}
+.text-navbar{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.navbar{
+    width: 1350px;
+    height: 50px;
+    position: fixed;
+    background-color: transparent;
+    color: #fff;
+    text-align: end;
+}
+
+.perfil-usuario{
+    width: 30px;
+    border-radius: 50px;
+    align-self: flex-start;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 16px;
+    background-color: dimgrey;
+    box-shadow: 0px 15px 16px 5px rgba(0,0,0,0.2);
+    padding: 5px 8px;
+    z-index: -15;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+a:hover{
+    color: goldenrod;
+}
+
+.Atividade{
+    width: 1000px;
+    height: max-content;
+    background-color: transparent;
+    position: absolute;
+    left: 13%;
+    top: 15%;
+}
+u{
+    color: #fff;
+}
+#titulo{
+    font-size: 50px;
+    align-items: center;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+}
+
+#linha-divisao{
+    width: 800px;
+    border: 1px solid #fff;
+}
+
+.tabela{
+    width: 800px;
+}
+
+.celula-especial{
+    background-color: #fff;
+    color: black;
+    padding: 8px;
+    width: 100px;
+    word-wrap: break-word;
+}
+
+.celula-comum{
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.texto-completo{
+    width: 800px;
+    font-size: 20px;
+    text-align: justify;
+    color: #fff;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.celula-pergunta{
+    background-color: #fff;
+    color: black;
+    padding: 8px;
+    width: 600px;
+    word-wrap: break-word;
+}
+
+.celula-resposta{
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #fff;
+    color: #fff;
+}
+select{
+    border: none;
+    color:#fff;
+    background-color: transparent;
+}
+
+select:hover{
+    color: black;
+    background-color: #fff;
+}
+
+.btn{
+    background-color: transparent;
+    color: #fff;
+}
+
+.caixa-final{
+    position: fixed;
+    top: 10%;
+    left: 25%;
+    width: 700px;
+    height: max-content;
+    align-items: center;
+    background-color: #000;
+}
+
+#img-left{
+    transform: rotate(180deg);
+}
+.not-active {
+    pointer-events: none;
+    cursor: default;
+}
+

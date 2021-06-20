@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>iLogic</title>
+        <script src="https://kit.fontawesome.com/5b266e7995.js" crossorigin="anonymous"></script>
+        <link href="{% static 'css/background.css' %}" rel="stylesheet">
+        <link href="{% static 'css/login.css' %}" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="container">
+            <div class="stars" ></div>
+            <div class="stars2" ></div>
+        </div>
+        <center>
+            <h1 id="titulo">UM MUNDO SEM LÓGICA</h1>
+            <div id="linha-divisao"></div>
+            <form action="." method="POST">
+                <h4><b>Login</b></h4>
+                {% csrf_token %}
+                <label name="usuario">USUÁRIO</label><br>
+                <input type="entry" name="usuario" placeholder="usuario"><br>
+                <label name="usuario">SENHA</label><br>
+                <input type="entry" name="senha" placeholder="senha"><br><br>
+                <button class="btn" type="submit">ENTRAR</button>
+                <button class="btn">CADASTRAR</button>
+                <br><br>
+            </form>
+        </center>
+        <script src="{% static 'js/home.js' %}" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>iLogic</title>
+        <script src="https://kit.fontawesome.com/5b266e7995.js" crossorigin="anonymous"></script>
+        <link href="{% static 'css/background.css' %}" rel="stylesheet">
+        <link href="{% static 'css/login.css' %}" rel="stylesheet">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="container">
+            <div class="stars" ></div>
+            <div class="stars2" ></div>
+        </div>
+        <center>
+            <h1 id="titulo">UM MUNDO SEM LÓGICA</h1>
+            <div id="linha-divisao"></div>
+            <form action="." method="POST">
+                <h2><b>Login</b></h2>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="btn" type="submit" value="ENTRAR">
+                <a class="btn" href="{% url 'cadastrar' %}">CADASTRAR</a>
+                <br><br>
+            </form>
+        </center>
+    </body>
+</html>

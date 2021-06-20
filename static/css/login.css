@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Nunito:wght@200&family=Titillium+Web:wght@200&display=swap');
+
+form{
+    color: #fff;
+    width: 350px;
+    height: max-content;
+    background-color: gray;
+    justify-items: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn{
+    padding: 5px;
+    border-radius: 10px;
+    align-self: center;
+    width: max-content;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#titulo{
+    font-size: 50px;
+    align-items: center;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+}
+
+#linha-divisao{
+    width: 800px;
+    border: 1px solid #fff;
+}
+input{
+    padding: 5px;
+    border-radius: 10px;
+    width: 200px;
+}
+label{
+    padding: 5px;
+}
+a:link 
+{ 
+ text-decoration:none; 
+}

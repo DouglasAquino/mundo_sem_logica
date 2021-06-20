@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>iLogic</title>
+        <script src="https://kit.fontawesome.com/5b266e7995.js" crossorigin="anonymous"></script>
+        <link href="{% static 'css/background.css' %}" rel="stylesheet">
+        <link href="{% static 'css/home.css' %}" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="container">
+            <div class="stars" ></div>
+            <div class="stars2" ></div>
+        </div>
+        <div class="Atividade">
+            <center>
+                <h1 id="titulo">EXERCÍCIOS</h1>
+                <div id="linha-divisao"></div>
+                <br><br>
+                <table>
+                    {% for exer in exercicios %}
+                        <tr>
+                            <td class="celula-pergunta">{{exer.0.titulo}} | pontos: {{exer.1.pontos}}</td>
+                            {% if exer.1.status == "1" %}
+                                <td class="celula-resposta">
+                                    <a href="{% url 'AcessarExercio' exer.0.id %}">CONCLUIDO</a>
+                                </td>
+                            {% elif exer.1.status == "0" %}
+                                <td class="celula-resposta btn">
+                                    <a href="{% url 'AcessarExercio' exer.0.id %}">ENTRAR</a>
+                                </td>
+                            {% else %}
+                                <td class="celula-resposta btn">
+                                    <a >BLOQUEADO</a>
+                                </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </table>
+            <center>
+        </div>
+        <nav class="navbar">
+            <a id="opcoes" class="text-navbar" href="{% url 'home' %}">Home</a>
+            <a id="opcoes" class="text-navbar sel" href="{% url 'exercicios' %}">Exercicios</a>
+            <a id="opcoes" class="text-navbar" href="{% url 'revista' %}">Revista</a>
+            <a id="opcoes" class="text-navbar" href="{% url 'home' %}">Sobre</a>    
+            <a id="opcoes" class="text-navbar" href="{% url 'logout' %}">Sair</a>
+        </nav>
+        <script src="{% static 'js/home.js' %}" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>iLogic</title>
+        <script src="https://kit.fontawesome.com/5b266e7995.js" crossorigin="anonymous"></script>
+        <link href="{% static 'css/background.css' %}" rel="stylesheet">
+        <link href="{% static 'css/home.css' %}" rel="stylesheet">
+        <meta name="description" content="">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <p id="id-exercicio" hidden>{{exercicio.exercicio.id}}</p>
+        <div class="container">
+            <div class="stars" ></div>
+            <div class="stars2" ></div>
+        </div>
+        <div class="navbar">
+            <a id="opcoes" class="text-navbar sel" href="{% url 'home' %}">Home</a>
+            <a id="opcoes" class="text-navbar" href="{% url 'exercicios' %}">Exercicios</a>
+            <a id="opcoes" class="text-navbar" href="{% url 'revista' %}">Revista</a>
+            <a id="opcoes" class="text-navbar" href="{% url 'home' %}">Sobre</a>    
+            {% if request.user.is_atuthenticated %}
+                <a id="opcoes" class="text-navbar" href="{% url 'logout' %}">Sair</a>
+            {% else %}
+                <a id="opcoes" class="text-navbar" href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </div>
+        <div class="Atividade">
+            <center>
+                <h1 id="titulo">{{exercicio.exercicio.titulo}}</h1>
+                <div id="linha-divisao"></div>
+                <br><br>
+                <table class="tabela">
+                    <tr>
+                        <td></td>
+                        <td class="celula-especial"><b>Cavernas dos Teoremas</b></td>
+                        <td class="celula-especial"><b>Desfiladeiro do Existencial</b></td>
+                        <td class="celula-especial"><b>Ponte da Conjunção</b></td>
+                        <td class="celula-especial"><b>Defiladeiro do Existencial</b></td>
+                        <td class="celula-especial"><b>Quebrar Dupla Onda de Fogo</b></td>
+                        <td class="celula-especial"><b>Presa na Dupla Onda de Fogo</b></td>
+                    </tr>
+                    <tr>
+                        <td class="celula-especial"><b>Guerreira</b></td>
+                        <td class="celula-comum"></td>
+                        <td class="celula-comum">X</td>
+                        <td class="celula-comum">X</td>
+                        <td class="celula-comum">X</td>
+                        <td class="celula-comum">X</td>
+                        <td class="celula-comum"></td>
+                    </tr>
+                    <tr>
+                        <td class="celula-especial"><b>Fantasma</b></td>
+                        <td class="celula-comum"></td>
+                        <td class="celula-comum">X</td>
+                        <td class="celula-comum"></td>
+                        <td class="celula-comum">X</td>
+                        <td class="celula-comum">X</td>
+                        <td class="celula-comum"></td>
+                    </tr>
+                    <tr>
+                        <td class="celula-especial"><b>Coruja</b></td>
+                        <td class="celula-comum">X</td>
+                        <td class="celula-comum"></td>
+                        <td class="celula-comum"></td>
+                        <td class="celula-comum">X</td>
+                        <td class="celula-comum"></td>
+                        <td class="celula-comum">X</td>
+                    </tr>
+                    <tr>
+                        <td class="celula-especial"><b>Velha Senhora</b></td>
+                        <td class="celula-comum">X</td>
+                        <td class="celula-comum"></td>
+                        <td class="celula-comum">X</td>
+                        <td class="celula-comum"></td>
+                        <td class="celula-comum"></td>
+                        <td class="celula-comum"></td>
+                    </tr>
+                </table>
+                <br>
+                <p class="texto-completo">
+                    Em um universo similar ao nosso, mas bem menor e localizado em uma outra galáxia, vivem 4 personagens que estão em uma guerra diária para trazer a lógica ao seu mundo. Há algum tempo que a escuridão cobriu parte do céu do pequeno planeta, a vegetação se desenvolve com dificuldade,  e todas as árvores têm baixa estatura e são cobertas por uma espécie de lodo infinito. É nesse ambiente devastado que uma guerreira, um fantasma, uma coruja e uma velha senhora buscam, através do uso das regras de inferência da lógica, trazer vida ao planeta. Nesse contexto, eles vivem uma série de aventuras. Algumas destas aventuras estão assinaladas na tabela abaixo.
+                </p>
+                <br>
+                <div id="linha-divisao"></div>
+                <p class="texto-completo">
+                    A partir das marcações apresentadas na tabela acima, você consegue inferir qual dessas afirmações são verdadeiras?
+                </p>
+                <table>
+                    <tr>
+                        <td class="celula-pergunta">Não é verdade que a o Fantasma e a Coruja estão na Caverna dos Teoremas.</td>
+                        <td class="celula-resposta">
+                            <select>
+                                <option value="0">VERDADEIRO</option>
+                                <option value="1">FALSO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-pergunta">Se a guerreira está no Desfiladeiro do Existencial, então a coruja também deve viver por lá. </td>
+                        <td class="celula-resposta">
+                            <select>
+                                <option value="0">VERDADEIRO</option>
+                                <option value="1">FALSO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-pergunta">Ou a Guerreira e o Fantasma, ou a Velha Senhora já estiveram no Desfiladeiro do Existencial.</td>
+                        <td class="celula-resposta">
+                            <select>
+                                <option value="0">VERDADEIRO</option>
+                                <option value="1">FALSO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-pergunta">Na Caverna dos Teoremas vivem a Velha Senhora e a Coruja.</td>
+                        <td class="celula-resposta">
+                            <select>
+                                <option value="0">VERDADEIRO</option>
+                                <option value="1">FALSO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-pergunta">A Coruja e a Velha Senhora costumam se encontrar no Desfiladeiro do Existencial, mas a Guerreira não. </td>
+                        <td class="celula-resposta">
+                            <select>
+                                <option value="0">VERDADEIRO</option>
+                                <option value="1">FALSO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-pergunta">Se a Coruja está presa na dupla onda de fogo, então a Guerreira ou a Velha senhora podem quebrar a dupla onda de fogo.</td>
+                        <td class="celula-resposta">
+                            <select>
+                                <option value="0">VERDADEIRO</option>
+                                <option value="1">FALSO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-pergunta">A Guerreira e a Velha Senhora estão na Ponte da Conjunção, mas ou a velha senhora quebra a dupla onda de fogo ou a Guerreira.</td>
+                        <td class="celula-resposta">
+                            <select>
+                                <option value="0">VERDADEIRO</option>
+                                <option value="1">FALSO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-pergunta">Se a Guerreira não está na Caverna dos Teoremas, então o Fantasma também não será visto por lá. </td>
+                        <td class="celula-resposta">
+                            <select>
+                                <option value="0">VERDADEIRO</option>
+                                <option value="1">FALSO</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-pergunta">O Fantasma está no Desfiladeiro do Existencial se e somente se ele estiver preso na dupla onda de fogo. </td>
+                        <td class="celula-resposta">
+                            <select>
+                                <option value="0">VERDADEIRO</option>
+                                <option value="1">FALSO</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+            <a class="btn" href="{% url 'ant' exercicio.exercicio.id %}" align="left">
+                    <img id="img-left" class="img-btn" src="{% static 'imagens/next.png' %}" width="20px">
+                    ANTERIOR
+                </a>    
+                <a class="btn" onclick="enviarRespostas()">
+                    ENVIAR RESPOSTA
+                </a>
+                <a class="btn"  href="{% url 'prox' exercicio.exercicio.id %}">
+                    PROXIMO
+                    <img class="img-btn" src="{% static 'imagens/next.png' %}" width="20px">
+                </a>
+                <div class="caixa-final" hidden>
+                    <img align="right" src="{% static 'imagens/x.png' %}" width="20px" onclick="fechar()">
+                    <p id="titulo">você acertou /9 </p>
+                    <button class="btn" href="{% url 'ant' exercicio.exercicio.id %}"><img id="img-left" class="img-btn" src="{% static 'imagens/next.png' %}" width="20px"> EXERCICIO ANTERIOR </button>
+                    <button class="btn" onclick="salvarPontos()"> SALVAR PONTOS </button>
+                    <button class="btn" href="{% url 'prox' exercicio.exercicio.id %}">PROXIMO EXERCICIO <img class="img-btn" src="{% static 'imagens/next.png' %}" width="20px"> </button>
+                    <br>
+                    <br>
+                </div>
+            <center>
+        </div>
+        
+        <script src="{% static 'js/navbarcontroller.js' %}" async defer></script>
+        <script src="{% static 'js/exercicio1.js' %}" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+body{
+    background-color: black;
+}
+.stars{
+	width: 3px;
+	height: 3px;
+	border-radius: 50%;
+	box-shadow: 50px 30px white,
+    300px 80px white,
+    500px 120px white,
+    600px 20px white,
+    550px 130px white,
+    850px 50px white,
+    300px 750px white,
+    500px 350px white,
+    600px 950px white,
+    550px 432px white,
+    850px 325px white,
+    320px 525px white,
+    920px 250px white,
+    735px 50px white,
+    1200px 100px white,
+    1215px 350px white,
+    1100px 50px white,
+    1352px 80px white,
+    987px 500px white,
+    1020px 200px white,
+    1050px 500px white,
+    1352px 432px white,
+    1300px 754px white,
+    1020px 950px white,
+    1740px 855px white,
+    960px 800px white;
+    animation: anim-stars 10s linear infinite;
+}
+.stars::after{
+    content: " ";
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    box-shadow: 50px 30px white,
+    100px 80px white,
+    80px 120px white,
+    800px 500px white,
+    250px 130px white,
+    200px 50px white,
+    150px 100px white,
+    320px 100px white;
+}
+.stars2{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    box-shadow: 15px 15px white,
+    125px 35px white,
+    1200px 100px white,
+    1015px 350px white,
+    845px 320px white,
+    250px 150px white,
+    1245px 645px white,
+    850px 745px white,
+    45px 100px white,
+    50px 100px white,
+    780px 100px white,
+    156px 100px white,
+    1200px 100px white,
+    1250px 5000px white,
+    220px 1255px white;
+    animation: anim-stars 20s linear infinite;
+}
+
+.stars2::after{
+    content: " ";
+    position: absolute;
+    top: 150px;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    box-shadow: 15px 15px white,
+    125px 35px white,
+    1250px 5000px white,
+    220px 115px white;
+}
+
+@keyframes anim-stars {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-100px);
+    }
+}
